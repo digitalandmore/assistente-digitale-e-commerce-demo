@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 /* ==================== LOAD PRODUCTS FROM BACKEND ==================== */
 async function loadProductsFromAPI() {
   try {
-    const res = await fetch('/api/product-info');
+    const res = await fetch(`${BASE_URL}/api/product-info`);
     const data = await res.json();
     products = Array.isArray(data.prodotti) ? data.prodotti : [];
     window.products = products; // Espone i prodotti globalmente per chat.js e altri script
