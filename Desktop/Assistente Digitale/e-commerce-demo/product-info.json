@@ -1,0 +1,230 @@
+{
+  "store": {
+    "nome": "TennisShop Pro",
+    "descrizione": "Il tuo negozio specializzato per tennis e racchettismo",
+    "settore": "Abbigliamento e Attrezzatura Sportiva - Tennis",
+    "fondato": "2019",
+    "slogan": "Performance. Passione. Professionalità.",
+    "indirizzo": "Via dello Sport 12, 20100 Milano (MI)",
+    "partita_iva": "IT12345678901",
+    "telefono": "+39 02 1234567",
+    "email": "info@tennisshoppro.it"
+  },
+  "categorie": {
+    "racchette": {
+      "nome": "Racchette da Tennis",
+      "descrizione": "Racchette professionali per ogni livello di gioco",
+      "icona": "fas fa-table-tennis"
+    },
+    "abbigliamento": {
+      "nome": "Abbigliamento Tennis",
+      "descrizione": "Vestiario tecnico e alla moda per il tennis, anche per l’estate",
+      "icona": "fas fa-tshirt"
+    },
+    "scarpe": {
+      "nome": "Scarpe da Tennis",
+      "descrizione": "Calzature specifiche per ogni superficie e stagione",
+      "icona": "fas fa-shoe-prints"
+    },
+    "accessori": {
+      "nome": "Accessori Tennis",
+      "descrizione": "Grip, palline, borse e molto altro",
+      "icona": "fas fa-briefcase"
+    }
+  },
+  "servizi": {
+    "consulenza_prodotti": {
+      "nome": "Consulenza Prodotti",
+      "descrizione": "Ti aiutiamo a scegliere l'attrezzatura perfetta per il tuo livello",
+      "icona": "fas fa-user-tie"
+    },
+    "configurazione_racchetta": {
+      "nome": "Setup Racchetta",
+      "descrizione": "Configurazione personalizzata tensione corde e peso",
+      "icona": "fas fa-cog"
+    },
+    "spedizione_gratuita": {
+      "nome": "Spedizione Gratuita",
+      "descrizione": "Spedizione gratuita per ordini superiori a €50",
+      "icona": "fas fa-shipping-fast"
+    }
+  },
+  "spedizioni": {
+    "corriere": "GLS, SDA, BRT",
+    "tempi": "24/48h lavorative in tutta Italia",
+    "costo": "€4.90 (gratis sopra i €50)",
+    "tracking": "Fornito via email e area clienti appena il pacco viene spedito",
+    "note": "Spediamo anche all'estero su richiesta. I resi sono gratuiti entro 30 giorni. Per qualsiasi dubbio sulle spedizioni, chiedi pure all'assistente digitale!"
+  },
+  "pagamenti": {
+    "metodi": [
+      "Carta di credito (Visa, Mastercard, American Express)",
+      "PayPal",
+      "Bonifico bancario",
+      "Contrassegno (+€3, solo Italia)"
+    ],
+    "note": "Tutti i pagamenti sono sicuri e protetti. Puoi scegliere il metodo che preferisci in fase di checkout."
+  },
+  "offerte": [
+    {
+      "id": 4,
+      "nome": "Adidas Club Tennis Skirt",
+      "prezzo_offerta": 49.99,
+      "prezzo_originale": 59.99,
+      "descrizione": "Gonna da tennis con shorts integrati - Sconto 15%",
+      "valida_fino": "2025-07-31"
+    },
+    {
+      "id": 10,
+      "nome": "Wilson Tour 6-Pack Bag",
+      "prezzo_offerta": 89.99,
+      "prezzo_originale": 109.99,
+      "descrizione": "Borsa per 6 racchette con scomparto scarpe - Sconto 18%",
+      "valida_fino": "2025-07-31"
+    }
+  ],
+  "ordine_demo": {
+    "numero_ordine": "TS123456",
+    "tracking": "GLS123456789IT",
+    "stato": "In transito",
+    "link_tracking": "https://www.gls-italy.com/it/servizi-online/ricerca-spedizioni?match=GLS123456789IT"
+  },
+  "brands": {
+    "wilson": {
+      "nome": "Wilson",
+      "descrizione": "Leader mondiale nel tennis con Roger Federer",
+      "specialita": "Racchette professionali"
+    },
+    "babolat": {
+      "nome": "Babolat",
+      "descrizione": "La marca preferita di Rafael Nadal",
+      "specialita": "Corde e racchette"
+    },
+    "nike": {
+      "nome": "Nike",
+      "descrizione": "Abbigliamento e scarpe ad alte prestazioni",
+      "specialita": "Abbigliamento e calzature"
+    }
+  },
+  "flow_types": {
+    "product_consultation": {
+      "nome": "Consulenza Prodotto",
+      "descrizione": "Ti aiutiamo a trovare il prodotto perfetto per il tuo livello, stile di gioco e budget."
+    },
+    "size_guide": {
+      "nome": "Guida Taglie",
+      "descrizione": "Assistenza per la scelta della taglia corretta di scarpe e abbigliamento."
+    },
+    "order_support": {
+      "nome": "Supporto Ordine",
+      "descrizione": "Aiuto per ordini, spedizioni, resi, pagamenti e tracking."
+    }
+  },
+  "prodotti": [
+    {
+      "id": 1,
+      "name": "Wilson Pro Staff RF97",
+      "price": 299.99,
+      "originalPrice": 349.99,
+      "category": "racchette",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0a0855fc/images/007/062/03875000_000.jpg?q=80&sw=543",
+      "description": "Racchetta professionale utilizzata da Roger Federer",
+      "rating": 5,
+      "reviews": 124,
+      "badge": "Bestseller"
+    },
+    {
+      "id": 2,
+      "name": "Babolat Pure Drive",
+      "price": 249.99,
+      "category": "racchette",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwefa06c1e/images/009/075/03102000_000.jpg?q=80&sw=210",
+      "description": "La racchetta più venduta al mondo",
+      "rating": 4.5,
+      "reviews": 89
+    },
+    {
+      "id": 3,
+      "name": "Nike Court Dri-FIT Polo",
+      "price": 59.99,
+      "category": "abbigliamento",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwaa721067/images/004/458/55321000__15.jpg?q=80&sw=543",
+      "description": "Polo tecnica in tessuto traspirante, ideale per l'estate",
+      "rating": 4,
+      "reviews": 67
+    },
+    {
+      "id": 4,
+      "name": "Adidas Club Tennis Skirt",
+      "price": 49.99,
+      "originalPrice": 59.99,
+      "category": "abbigliamento",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw53dc319d/images/005/462/17779000__13.jpg?q=80&sw=543",
+      "description": "Gonna da tennis con shorts integrati, fresca e comoda per la stagione calda",
+      "rating": 5,
+      "reviews": 43
+    },
+    {
+      "id": 5,
+      "name": "Nike Air Zoom Vapor Cage 4",
+      "price": 139.99,
+      "category": "scarpe",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2faa7cbe/images/004/162/17227000_0_1.jpg?q=80&sw=543",
+      "description": "Scarpe da tennis per terreni duri, ottime per l'estate",
+      "rating": 4.5,
+      "reviews": 156,
+      "badge": "Novità"
+    },
+    {
+      "id": 6,
+      "name": "Adidas Barricade 2022",
+      "price": 119.99,
+      "category": "scarpe",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dweca76384/images/005/158/05408000_0_1.jpg?q=80&sw=543",
+      "description": "Stabilità e comfort per lunghe partite, disponibile in vari colori estivi",
+      "rating": 4,
+      "reviews": 92
+    },
+    {
+      "id": 7,
+      "name": "Wilson Championship Tennis Balls",
+      "price": 4.99,
+      "category": "accessori",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwfc31e21c/images/007/234/0157700000_000.jpg?q=80&sw=543",
+      "description": "Confezione da 3 palline ITF approved",
+      "rating": 5,
+      "reviews": 234
+    },
+    {
+      "id": 8,
+      "name": "Babolat Pro Tour Grip",
+      "price": 12.99,
+      "category": "accessori",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw559656bf/images/009/666/0195200000_000.jpg?q=80&sw=543",
+      "description": "Grip professionale anti-sudore",
+      "rating": 4,
+      "reviews": 78
+    },
+    {
+      "id": 9,
+      "name": "Nike Court Flex Ace Shorts",
+      "price": 39.99,
+      "category": "abbigliamento",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6a058e91/images/004/458/55146000_000.jpg?q=80&sw=543",
+      "description": "Shorts in tessuto elasticizzato, perfetti per il gioco estivo",
+      "rating": 4.5,
+      "reviews": 102
+    },
+    {
+      "id": 10,
+      "name": "Wilson Tour 6-Pack Bag",
+      "price": 89.99,
+      "originalPrice": 109.99,
+      "category": "accessori",
+      "image": "https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb7d68540/images/007/375/0244100000_000.jpg?q=80&sw=543",
+      "description": "Borsa per 6 racchette con scomparto scarpe",
+      "rating": 4,
+      "reviews": 56
+    }
+  ]
+}

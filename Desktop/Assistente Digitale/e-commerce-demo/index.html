@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TennisShop Pro - Assistente Digitale E-commerce Demo</title>
+  <meta name="description" content="Demo e-commerce con assistente digitale AI per abbigliamento e attrezzatura tennis">
+  <meta name="keywords" content="tennis, abbigliamento sportivo, racchette, e-commerce, assistente digitale, AI">
+  
+  <!-- Iubenda Cookie Solution -->
+  <script type="text/javascript">
+  var _iub = _iub || [];
+  _iub.csConfiguration = {"siteId":4109838,"cookiePolicyId":36423720,"lang":"it","storage":{"useSiteId":true}};
+  </script>
+  <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4109838.js"></script>
+  <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-835STHP1ZV" class="_iub_cs_activate" data-iub-purposes="3"></script>
+  <script class="_iub_cs_activate" data-iub-purposes="3">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-835STHP1ZV');
+  </script>
+  
+  <!-- Meta Pixel Code -->
+  <script class="_iub_cs_activate" data-iub-purposes="3">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1235139851737702');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1235139851737702&ev=PageView&noscript=1"
+  /></noscript>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="https://assistente-digitale.it/images/favicon.png">
+
+<script src="functions.js"></script>
+<script src="ui-manager.js"></script>
+<script src="script.js"></script>
+<script src="chat.js" defer></script>
+</head>
+
+<body>
+  <!-- ==================== DISCLAIMER BANNER ==================== -->
+  <div class="disclaimer-banner" id="disclaimerBanner">
+    <div class="container">
+      <div class="disclaimer-content">
+        <div class="disclaimer-icon">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <div class="disclaimer-text">
+          <strong>DISCLAIMER:</strong> Questo è un sito demo a scopo dimostrativo. I prodotti, prezzi, immagini e marchi mostrati sono utilizzati esclusivamente a titolo esemplificativo. Le immagini sono state reperite dal web e potrebbero essere soggette a copyright dei rispettivi proprietari. Non siamo responsabili per l'accuratezza delle informazioni mostrate. Nessuna transazione reale verrà elaborata.
+        </div>
+        <button class="disclaimer-close" onclick="closeDisclaimer()" aria-label="Chiudi disclaimer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">
+          <i class="fas fa-table-tennis"></i>
+          <span>TennisShop Pro</span>
+        </div>
+        
+        <div class="nav-center">
+          <div class="search-bar">
+            <input type="text" placeholder="Cerca prodotti..." id="searchInput">
+            <button type="button" aria-label="Cerca">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="nav-actions">
+          <button class="cart-button" onclick="toggleCart()" aria-label="Carrello">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </nav>
+      
+      <!-- Mobile Search -->
+      <div class="mobile-search">
+        <div class="search-bar">
+          <input type="text" placeholder="Cerca prodotti..." id="mobileSearchInput">
+          <button type="button" aria-label="Cerca">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<!-- ==================== HERO SECTION ==================== -->
+<section class="hero-section">
+  <div class="hero-title">
+    <h1>🎾 Benvenuto su TennisShop Pro!</h1>
+  </div>
+  <div class="hero-content hero-grid">
+    <div class="hero-col hero-help">
+      <p class="hero-subtitle">
+        Il tuo <strong>Assistente Digitale</strong> ti aiuta a:
+      </p>
+      <ul class="hero-list">
+        <li>✅ Scegliere la racchetta perfetta per il tuo livello</li>
+        <li>✅ Trovare scarpe e abbigliamento su misura</li>
+        <li>✅ Scoprire offerte e promozioni attive</li>
+        <li>✅ Risolvere dubbi su taglie, spedizioni e ordini</li>
+        <li>✅ Ricevere supporto su resi, pagamenti e tracking</li>
+      </ul>
+    </div>
+    <div class="hero-col hero-examples">
+      <span><strong>Prova subito!</strong> Puoi chiedere ad esempio:</span>
+      <ul>
+        <li>🛒 <em>“Quali sono le offerte attive?”</em></li>
+        <li>🚚 <em>“Come funziona la spedizione?”</em></li>
+        <li>📦 <em>“Dove si trova il mio ordine TS123456?”</em></li>
+        <li>↩️ <em>“Come posso fare un reso?”</em></li>
+        <li>📏 <em>“Che taglia devo scegliere per le scarpe?”</em></li>
+        <li>🎾 <em>“Consigliami una racchetta per principianti”</em></li>
+        <li>💳 <em>“Quali metodi di pagamento accettate?”</em></li>
+        <li>👕 <em>“Avete abbigliamento tecnico per l’estate?”</em></li>
+      </ul>
+    </div>
+  </div>
+  <div class="hero-chat-btn-wrapper">
+    <button class="hero-chat-btn" onclick="window.toggleChat()" aria-label="Apri chat assistente digitale">
+      💬 Chatta con l'Assistente Digitale
+    </button>
+  </div>
+</section>
+
+  <!-- ==================== CATEGORIES ==================== -->
+  <section class="categories">
+    <div class="container">
+      <h2>Categorie</h2>
+      <div class="categories-grid">
+        <div class="category-card" data-category="racchette">
+          <i class="fas fa-table-tennis"></i>
+          <h3>Racchette</h3>
+          <p>Racchette professionali e per principianti</p>
+        </div>
+        <div class="category-card" data-category="abbigliamento">
+          <i class="fas fa-tshirt"></i>
+          <h3>Abbigliamento</h3>
+          <p>Abbigliamento tecnico e casual</p>
+        </div>
+        <div class="category-card" data-category="scarpe">
+          <i class="fas fa-shoe-prints"></i>
+          <h3>Scarpe</h3>
+          <p>Scarpe da tennis per ogni superficie</p>
+        </div>
+        <div class="category-card" data-category="accessori">
+          <i class="fas fa-grip-horizontal"></i>
+          <h3>Accessori</h3>
+          <p>Grip, palline e accessori vari</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS SECTION ==================== -->
+  <section class="products">
+    <div class="container">
+      <div class="products-header">
+        <h2>I Nostri Prodotti</h2>
+        <div class="products-filters">
+          <button class="filter-btn active" data-filter="all">Tutti</button>
+          <button class="filter-btn" data-filter="racchette">Racchette</button>
+          <button class="filter-btn" data-filter="abbigliamento">Abbigliamento</button>
+          <button class="filter-btn" data-filter="scarpe">Scarpe</button>
+          <button class="filter-btn" data-filter="accessori">Accessori</button>
+        </div>
+      </div>
+      
+      <div class="products-grid" id="productsGrid">
+        <!-- Wilson Pro Staff RF97 -->
+        <div class="product-card" data-category="racchette" data-id="1">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0a0855fc/images/007/062/03875000_000.jpg?q=80&sw=543" alt="Racchetta Wilson Pro Staff RF97" loading="lazy">
+            <div class="product-badge">Bestseller</div>
+          </div>
+          <div class="product-info">
+            <h3>Wilson Pro Staff RF97</h3>
+            <p class="product-description">Racchetta professionale utilizzata da Roger Federer</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span>(124 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€299,99</span>
+              <span class="original-price">€349,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(1)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Babolat Pure Drive -->
+        <div class="product-card" data-category="racchette" data-id="2">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwefa06c1e/images/009/075/03102000_000.jpg?q=80&sw=210" alt="Racchetta Babolat Pure Drive" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Babolat Pure Drive</h3>
+            <p class="product-description">La racchetta più venduta al mondo</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span>(89 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€249,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(2)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Nike Court Dri-FIT Polo -->
+        <div class="product-card" data-category="abbigliamento" data-id="3">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwaa721067/images/004/458/55321000__15.jpg?q=80&sw=543" alt="Polo Nike Court Dri-FIT" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Nike Court Dri-FIT Polo</h3>
+            <p class="product-description">Polo tecnica in tessuto traspirante</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span>(67 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€59,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(3)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Adidas Club Tennis Skirt -->
+        <div class="product-card" data-category="abbigliamento" data-id="4">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw53dc319d/images/005/462/17779000__13.jpg?q=80&sw=543" alt="Gonna Tennis Adidas Club" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Adidas Club Tennis Skirt</h3>
+            <p class="product-description">Gonna da tennis con shorts integrati</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span>(43 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€49,99</span>
+              <span class="original-price">€59,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(4)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Nike Air Zoom Vapor Cage 4 -->
+        <div class="product-card" data-category="scarpe" data-id="5">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2faa7cbe/images/004/162/17227000_0_1.jpg?q=80&sw=543" alt="Scarpe Nike Air Zoom Vapor Cage 4" loading="lazy">
+            <div class="product-badge">Novità</div>
+          </div>
+          <div class="product-info">
+            <h3>Nike Air Zoom Vapor Cage 4</h3>
+            <p class="product-description">Scarpe da tennis per terreni duri</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span>(156 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€139,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(5)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Adidas Barricade 2022 -->
+        <div class="product-card" data-category="scarpe" data-id="6">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dweca76384/images/005/158/05408000_0_1.jpg?q=80&sw=543" alt="Scarpe Adidas Barricade 2022" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Adidas Barricade 2022</h3>
+            <p class="product-description">Stabilità e comfort per lunghe partite</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span>(92 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€119,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(6)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Wilson Championship Tennis Balls -->
+        <div class="product-card" data-category="accessori" data-id="7">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwfc31e21c/images/007/234/0157700000_000.jpg?q=80&sw=543" alt="Palline da Tennis Wilson Championship" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Wilson Championship Tennis Balls</h3>
+            <p class="product-description">Confezione da 3 palline ITF approved</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <span>(234 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€4,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(7)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Babolat Pro Tour Grip -->
+        <div class="product-card" data-category="accessori" data-id="8">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw559656bf/images/009/666/0195200000_000.jpg?q=80&sw=543" alt="Grip Babolat Pro Tour" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Babolat Pro Tour Grip</h3>
+            <p class="product-description">Grip professionale anti-sudore</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span>(78 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€12,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(8)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Nike Court Flex Ace Shorts -->
+        <div class="product-card" data-category="abbigliamento" data-id="9">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6a058e91/images/004/458/55146000_000.jpg?q=80&sw=543" alt="Shorts Nike Court Flex Ace" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Nike Court Flex Ace Shorts</h3>
+            <p class="product-description">Shorts in tessuto elasticizzato</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span>(102 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€39,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(9)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+
+        <!-- Wilson Tour 6-Pack Bag -->
+        <div class="product-card" data-category="accessori" data-id="10">
+          <div class="product-image">
+            <img src="https://www.tennis-point.it/dw/image/v2/BBDP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb7d68540/images/007/375/0244100000_000.jpg?q=80&sw=543" alt="Borsa Tennis Wilson Tour 6-Pack" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Wilson Tour 6-Pack Bag</h3>
+            <p class="product-description">Borsa per 6 racchette con scomparto scarpe</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <span>(56 recensioni)</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">€89,99</span>
+              <span class="original-price">€109,99</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(10)">
+              <i class="fas fa-cart-plus"></i>
+              Aggiungi al Carrello
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ==================== CART SIDEBAR ==================== -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>
+        <i class="fas fa-shopping-cart"></i>
+        Il Tuo Carrello
+      </h3>
+      <button class="cart-close-btn" onclick="closeCart()" aria-label="Chiudi carrello">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-cart"></i>
+        <p>Il tuo carrello è vuoto</p>
+        <small>Aggiungi alcuni prodotti per iniziare!</small>
+      </div>
+    </div>
+    
+    <div class="cart-footer" id="cartFooter" style="display: none;">
+      <div class="cart-total">
+        <div class="total-row">
+          <span>Subtotale:</span>
+          <span id="cartSubtotal">€0,00</span>
+        </div>
+        <div class="total-row">
+          <span>Spedizione:</span>
+          <span id="cartShipping">Gratuita</span>
+        </div>
+        <div class="total-row total-final">
+          <span>Totale:</span>
+          <span id="cartTotal">€0,00</span>
+        </div>
+      </div>
+      <button class="checkout-btn">
+        <i class="fas fa-credit-card"></i>
+        Procedi al Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== CHAT WIDGET ==================== -->
+  <div class="chat-widget" id="chatWidget">
+    <button class="chat-widget-button"  aria-label="Apri chat assistente">
+  <img src="https://assistente-digitale.it/images/favicon.png" alt="Chat Assistant">
+  <div class="chat-notification" id="chatNotification">1</div>
+</button>
+  </div>
+
+  <!-- Chat Overlay -->
+  <div class="chat-overlay-widget" id="chatOverlayWidget" onclick="closeChat()"></div>
+
+  <!-- Chat Window -->
+  <div class="chat-window-widget" id="chatWindowWidget">
+    <div class="chat-header-widget">
+      <div class="chat-title-widget">
+        <img src="https://assistente-digitale.it/images/favicon.png" alt="Assistente">
+        <div class="chat-info">
+          <span class="chat-name">Assistente Digitale - TennisShop</span>
+          <span class="chat-status">
+            <i class="fas fa-circle online"></i>
+            Online
+          </span>
+        </div>
+      </div>
+      <button class="chat-close-btn-widget" onclick="closeChat()" aria-label="Chiudi chat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="chat-body-widget" id="chatBody">
+      <!-- Messaggi caricati dinamicamente -->
+    </div>
+    
+    <div class="chat-input-widget">
+      <input type="text" 
+             id="chatInput" 
+             placeholder="Scrivi un messaggio..." 
+             maxlength="500"
+             onkeypress="handleChatEnterKey(event)">
+      <button onclick="sendChatMessage()" 
+              id="chatSendButton"
+              aria-label="Invia messaggio">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <i class="fas fa-table-tennis"></i>
+            <span>TennisShop Pro</span>
+          </div>
+          <p>La tua destinazione per l'eccellenza nel tennis</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Informazioni</h4>
+          <ul>
+            <li><a href="#">Chi Siamo</a></li>
+            <li><a href="#">Spedizioni</a></li>
+            <li><a href="#">Resi</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Servizio Clienti</h4>
+          <ul>
+            <li><a href="#">Contatti</a></li>
+            <li><a href="#">Supporto</a></li>
+            <li><a href="#">Garanzie</a></li>
+            <li><a href="#">Recensioni</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Seguici</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer Bottom - FUORI dal container principale -->
+  <div class="footer-bottom-wrapper">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <p>&copy; 2025 TennisShop Pro. Demo E-commerce con Assistente Digitale.</p>
+        </div>
+        <div class="footer-right">
+        <a href="https://assistente-digitale.it" target="_blank" rel="noopener">
+          <img src="https://assistente-digitale.it/images/logo-verticale.png" 
+         alt="Assistente Digitale" 
+         style="height: 30px;">
+      </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
